@@ -1,0 +1,55 @@
+﻿<Window x:Class="MyMovieList.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyMovieList"
+        mc:Ignorable="d"
+        Title="Home" Height="640" Width="420">
+
+    <Window.Resources>
+        <Style x:Key="Logo" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="50px"/>
+            <Setter Property="Foreground" Value="white"/>
+        </Style>
+        <Style x:Key="Login" TargetType="Button">
+            <Setter Property="Background" Value="white"/>
+            <Setter Property="BorderBrush" Value="white"/>
+            <Setter Property="Foreground" Value="#6a9cfd"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Style.Resources>
+        </Style>
+    </Window.Resources>
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+                    <GradientStop Color="#aee4ff" Offset="0"/>
+                    <GradientStop Color="#6a9cfd" Offset="0.567"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <DockPanel>
+
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource Logo}">Welcome to</TextBlock>
+                    <TextBlock Style="{StaticResource Logo}">My List</TextBlock>
+                    <Button Margin="0,50,0,0" Width="300" Height="40px" Content="Login" Style="{StaticResource Login}" Name="login_click" Click="Login_Click"/>
+                    <Button Width="300" Height="40px" Content="Register" Style="{StaticResource Login}" Click="Registration_Click"/>
+                </StackPanel>
+                
+
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
